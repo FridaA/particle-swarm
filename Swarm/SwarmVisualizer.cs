@@ -16,6 +16,7 @@ namespace Swarm
     {
         private ParticleSwarm _swarm;
         private Timer timer;
+        private float time;
 
         public SwarmVisualizer(ParticleSwarm swarm)
         {
@@ -23,9 +24,11 @@ namespace Swarm
 
             InitializeComponent();
 
+            time = 0;
+
             timer = new Timer(); 
             timer.Tick += new EventHandler(this.timer_Tick);
-            timer.Interval = 500;
+            timer.Interval = 20;
             timer.Start();
         }
 
@@ -52,6 +55,7 @@ namespace Swarm
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            time += timer.Interval;
             _swarm.UpdateParticles();
             Invalidate();
         }

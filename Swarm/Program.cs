@@ -19,7 +19,7 @@ namespace Swarm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SwarmVisualizer(new ParticleSwarm(3)));
+            Application.Run(new SwarmVisualizer(new ParticleSwarm(30)));
         }
     }
 }
