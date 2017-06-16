@@ -40,8 +40,7 @@ namespace Swarm
 
         public static float GoldsteinPrice(Vector2 p)
         {
-
-
+            //Global minimum at (0, -1)
             double x = Math.Pow(p.X + p.Y + 1, 2);
             double y = 19 - 14*p.X + 3*Math.Pow(p.X, 2) - 14*p.Y + 6*p.X*p.Y + 3*Math.Pow(p.Y, 2);
             double z = Math.Pow(2*p.X - 3*p.Y,2);

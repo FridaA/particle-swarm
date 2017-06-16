@@ -11,3 +11,16 @@ C:\Users\Frida\Documents\GitHub\swarm\Swarm\bin\Debug\OpenTK.xml
 C:\Users\Frida\Documents\GitHub\swarm\Swarm\bin\Debug\OpenTK.GLControl.xml
 C:\Users\Frida\Documents\GitHub\swarm\Swarm\obj\x86\Debug\Swarm.SwarmVisualizer.resources
 C:\Users\Frida\Documents\GitHub\swarm\Swarm\obj\x86\Debug\Swarm.csprojResolveAssemblyReference.cache
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.exe
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.pdb
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\Swarm.exe
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\Swarm.pdb
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\OpenTK.dll
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\OpenTK.pdb
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\OpenTK.xml
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.csprojResolveAssemblyReference.cache
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.Properties.Resources.resources
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.SwarmVisualizer.resources
+C:\Users\Frida\Documents\GitHub\particle-swarm\Swarm\obj\x86\Debug\Swarm.csproj.GenerateResource.Cache

@@ -17,7 +17,7 @@ namespace Swarm
 
         private int particleSize = 3;
         public static float timeStep = 0.04f;
-        private float maxVelocity = 0.1f;
+        private float maxVelocity = 0.5f;
 
         public Size Size
         {
@@ -51,7 +51,7 @@ namespace Swarm
 
         public static float EvaluateParticle(Vector2 p)
         {
-            return ScalarField.Trig(p);
+            return ScalarField.GoldsteinPrice(p);//ScalarField.Trig(p);
         }
 
         public static float EvaluateParticle(Vector2 p, float time)
@@ -65,14 +65,13 @@ namespace Swarm
             {
                 this.BestPosition = this.Position;
             }
+
+            //TODO: Collision control
+            //TODO: Particles cannot be too close to each other
         }
 
         public void UpdateVelocity(Vector2 bestInSwarm)
         { 
-            //Vill egentligen inte hitta optima utan hänga ihop bara
-            //BEräkna medelpunkt hos svärmen
-            //vilken generell riktning har de andra?
-            //kollisionskontroll
             float x = this.Velocity.X + (this.BestPosition.X - this.Position.X) / timeStep + (bestInSwarm.X - this.Position.X) / timeStep;
             float y = this.Velocity.Y + (this.BestPosition.Y - this.Position.Y) / timeStep + (bestInSwarm.Y - this.Position.Y) / timeStep;
 

@@ -16,9 +16,22 @@ namespace Swarm
 
         private Random random;
 
+        public float IntervalMax { get; set; }
+        public float IntervalMin { get; set; }
+
         public ParticleSwarm(int numberOfParticles)
         {
-            random = new Random(); //TODO: set interval here!
+            random = new Random(); 
+            IntervalMin = 0f;
+            IntervalMax = 1f;
+            initializeSwarm(numberOfParticles);
+        }
+
+        public ParticleSwarm(int numberOfParticles, float min, float max)
+        {
+            random = new Random();
+            IntervalMin = min;
+            IntervalMax = max;
             initializeSwarm(numberOfParticles);
         }
 
@@ -58,46 +71,38 @@ namespace Swarm
         {
             Particles = new List<Particle>();
 
-            //TODO: Initialize numberOfParticles particles in the swarm
-            //      Give random initial position and velocity in interval [min, max]
-
             for (int i = 0; i < numberOfParticles; i++)
             {
-                Particle p = new Particle(getRandomPosition(0, 1), getRandomVelocity(0, 1));
+                //TODO: Place particles within a circle around a center point (a,b)
+                //TODO: Get point (a,b) from mouse click in windows form
+                Particle p = new Particle(getRandomPosition(), getRandomVelocity());
                 p.BoundVelocity();
                 Particles.Add(p);
             }
-            //3 manual particles
-            /*this.Particles.Add(
-                new Particle(new Vector2(0.2f, 0.5f), new Vector2(0.2f, 0.1f)));
-            this.Particles.Add(
-                new Particle(new Vector2(0.2f, 0.2f), new Vector2(0.1f, 0.2f)));
-            this.Particles.Add(
-                new Particle(new Vector2(0.4f, 0.4f), new Vector2(-0.1f, -0.2f)));*/
         }
 
-        private float getRandomPositionValue(float min, float max)
+        private float getRandomPositionValue()
         {
-            return (float) (min + random.NextDouble() * (max - min));
+            return (float) (IntervalMin + random.NextDouble() * (IntervalMax - IntervalMin));
         }
 
-        private Vector2 getRandomPosition(float min, float max)
+        private Vector2 getRandomPosition()
         {
-            return new Vector2(getRandomPositionValue(min, max), getRandomPositionValue(min, max));
+            return new Vector2(getRandomPositionValue(), getRandomPositionValue());
         }
 
-        private float getRandomVelocityValue(float min, float max)
+        private float getRandomVelocityValue()
         { 
             float alpha = 1f;
 
-            float range = max - min;
+            float range = IntervalMax - IntervalMin;
             double value = alpha/Particle.timeStep * (random.NextDouble()*range - range/2);
             return (float)value;
         }
 
-        private Vector2 getRandomVelocity(float min, float max)
+        private Vector2 getRandomVelocity()
         {
-            return new Vector2(getRandomVelocityValue(min, max), getRandomVelocityValue(min, max));
+            return new Vector2(getRandomVelocityValue(), getRandomVelocityValue());
         }
     }
 }
